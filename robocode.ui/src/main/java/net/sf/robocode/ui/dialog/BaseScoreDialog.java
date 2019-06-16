@@ -23,7 +23,7 @@ import java.awt.event.ComponentListener;
  * @author Pavel Savara (original)
  */
 @SuppressWarnings("serial")
-public abstract class BaseScoreDialog extends JFrame {
+public abstract class BaseScoreDialog extends JDialog {
 	protected final IWindowManagerExt windowManager;
 
 	private final EventHandler eventHandler = new EventHandler();
@@ -34,7 +34,7 @@ public abstract class BaseScoreDialog extends JFrame {
 
 	public BaseScoreDialog(IWindowManager windowManager, boolean modal) {
 		// In order to prevent the dialog from hiding, null must be given as 'owner' parameter
-		//super(windowManager != null ? windowManager.getRobocodeFrame() : null, modal);
+		super(windowManager != null ? windowManager.getRobocodeFrame() : null, modal);
 		this.windowManager = (IWindowManagerExt) windowManager;
 	}
 
